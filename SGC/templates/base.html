@@ -14,8 +14,11 @@
         <span class='appnombre'>
         <img src="{% static 'Logo-super.jpg' %}" > 
         Sistema de Gestión de Calidad
+        <hr>
+        <a href="{% url 'index' %}"><button class="button button2"><h3>Mapa de procesos</h3></button></a>
+        <a href="{% url 'index' %}"><button class="button button2"><h3>Indicadores</h3></button></a>
+        <a href="{% url 'index' %}"><button class="button button2"><h3>Salir</h3></button></a>
         </span>
-        <br>
     </header>
     {% block content %}
     {% endblock %}

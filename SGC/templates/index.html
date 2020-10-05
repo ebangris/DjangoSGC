@@ -1,10 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	{% for s in Procesos %}
-	<div>
-	    <h2><a href="{% url 'index' %}">{{ s.nombre }}</a></h2>
-	</div>
-
+	<h2>Misionales</h2>
+	{% for m in Misionales %}
+	    <a href="{% url 'index' %}"><button class="button button1"><h3>{{ m.nombre }}</h3></button></a>
 	{% endfor %}
+
+	<hr>
+    <h2>Operativos</h2>
+	{% for o in Operativos %}
+	    <a href="{% url 'index' %}"><button class="button button1"><h3>{{ o.nombre }}</h3></button></a>
+	{% endfor %}
+	
+	<hr>
+    <h2>Apoyo</h2>
+	{% for a in Apoyo %}
+	    <a href="{% url 'index' %}"><button class="button button1"><h3>{{ a.nombre }}</h3></button></a>
+	{% endfor %}
+
 {% endblock %}

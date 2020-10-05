@@ -1,15 +1,11 @@
 header {
 	background :#1F85DE;
-	-moz-box-shadow   :2px 2px 2px black;
-	-webkit-box-shadow:2px 2px 2px black;
-	box-shadow        :2px 2px 2px black;
+	-moz-box-shadow   :4px 4px 4px black;
+	-webkit-box-shadow:4px 4px 4px black;
+	box-shadow        :4px 4px 4px black;
 	margin-right      :15px;
-	margin-left 	  :5px;
+	margin-left 	  :15px;
 	margin-top 	  	  :5px;
-}
-
-header p {
-	font-family:'Lobster';
 }
 
 .appnombre {
@@ -22,6 +18,16 @@ header p {
 	font-size  :50pt;
 }
 
+.menu {
+	font-family:'Lobster';
+    width: 400px;
+    height:25px;
+	text-align :right;
+	background :#1F85DE;
+	color      :black;
+	font-size  :40pt;
+}
+
 header img {
 	padding    		  :20px;
 	border            :4px #1F85DE;
@@ -32,3 +38,34 @@ body{
 	text-align :center;
 	padding-left: 20px;
 }
+
+.button {
+  border: none;
+  color: white;
+  padding: 12px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: #1F85DE;
+  border: 2px solid #1F85DE;
+}
+
+.button1:hover {
+  background-color: #1F85DE;
+  color: white;
+}
+
+.button2 {
+  background-color: #1F85DE;
+  padding: 900px;
+  color: white;
+}
+
+.button2:hover {
+  background-color: white; 
+  color: #1F85DE;
+}
+

@@ -19,10 +19,12 @@ def login(request):
 
 def index(request):
 	# si tiene una sesion iniciada
-	if request.user.is_authenticated:
-		procesos = Proceso.objects.all() # muestra todos los sistemas de procesos
-		return render(request, "index.html", {'Procesos':procesos} )
+	#if request.user.is_authenticated:
+		M = Proceso.objects.filter(tipo='Misionales')
+		O = Proceso.objects.filter(tipo='Operativos')
+		A = Proceso.objects.filter(tipo='Apoyo')
+		return render(request, "index.html", {'Misionales':M, 'Operativos':O, 'Apoyo':A} )
 	
 	# si no ha iniciado sesion
-	return render(request, "index.html")
+	#return render(request, "Error404")
 
