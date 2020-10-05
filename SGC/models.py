@@ -2,7 +2,8 @@ from django.db import models
 from django.utils import timezone
 
 class Proceso(models.Model):
-	Tipos = models.TextChoices('Tipos', 'Misionales Operativos Apoyo')
+	#Tipos = models.TextChoices('Tipos', 'Misionales Operativos Apoyo')
+	Tipos = ('misionales', 'Misionales'), ('operativos', 'Operativos'), ('apoyo', 'Apoyo'),
 	nombre = models.CharField(max_length=80)
 	codigo = models.CharField(max_length=15)
 	
@@ -10,7 +11,7 @@ class Proceso(models.Model):
 	edicion = models.DateField()
 	
 	# Un proceso pertenece a un tipo de procesos
-	tipo = models.CharField(choices=Tipos.choices, max_length=10)
+	tipo = models.CharField(choices=Tipos, max_length=10)
 
 	def __str__(self):
 		return self.nombre
