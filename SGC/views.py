@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import logout as do_logout
 from django.utils import timezone
-from .models import *
+from SGC.models import *
 
 # Create your views here.
 '''
@@ -14,15 +14,21 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 '''
 
-def login(request):
-    return render(request, "index.html")
+def indicadores(request):
+	indicadores = Indicador.objects.all()
+	return render(request, "indicadores.html", {'indicadores':indicadores})
+
+def proceso(request, pk):
+	proceso = get_object_or_404(Proceso, pk=pk)
+	procedimientos = Procedimiento.objects.filter(proceso=proceso)
+	return render(request, 'proceso.html', {'proceso':proceso, 'procedimientos':procedimientos})
 
 def index(request):
 	# si tiene una sesion iniciada
 	#if request.user.is_authenticated:
-		M = Proceso.objects.filter(tipo='Misionales')
-		O = Proceso.objects.filter(tipo='Operativos')
-		A = Proceso.objects.filter(tipo='Apoyo')
+		M = Proceso.objects.filter(tipo='misionales')
+		O = Proceso.objects.filter(tipo='operativos')
+		A = Proceso.objects.filter(tipo='apoyo')
 		return render(request, "index.html", {'Misionales':M, 'Operativos':O, 'Apoyo':A} )
 	
 	# si no ha iniciado sesion

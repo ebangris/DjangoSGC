@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'), # todo el que llegue al blog entrara a esta vista
-    path('login', views.login),
+    path('indicadores', views.indicadores, name='indicadores'),
+    path('proceso/<int:pk>/', views.proceso, name='proceso'),
 
     #path('post/<int:pk>/', views.post_detail, nombre='post_detail'), # url para los detalles
 ]

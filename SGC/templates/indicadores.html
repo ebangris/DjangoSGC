@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<hr>
+	<table class='ind' align=center>
+		<tr>
+			<th>Indicador</th>
+			<th>Actual</th>
+			<th>Esperado</th>
+		</tr>
+	{% for i in indicadores %}
+		<tr>
+			<td>{{i.nombre}}</td>
+			<td>{{i.actual}}</td>
+			<td>{{i.esperado}}</td>
+		</tr>	
+	{% endfor %}
+	</table>
+	<hr>
+{% endblock %}

@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Proceso(models.Model):
 	#Tipos = models.TextChoices('Tipos', 'Misionales Operativos Apoyo')
-	Tipos = ('misionales', 'Misionales'), ('operativos', 'Operativos'), ('apoyo', 'Apoyo'),
+	Tipos = ('misionales', 'Misionales'), ('operativos', 'Operativos'), ('apoyo', 'Apoyo')
 	nombre = models.CharField(max_length=80)
 	codigo = models.CharField(max_length=15)
 	

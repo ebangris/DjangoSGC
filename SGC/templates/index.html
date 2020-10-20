@@ -3,19 +3,23 @@
 {% block content %}
 	<h2>Misionales</h2>
 	{% for m in Misionales %}
-	    <a href="{% url 'index' %}"><button class="button button1"><h3>{{ m.nombre }}</h3></button></a>
+	    <a href="{% url 'proceso' pk=m.pk %}"><button class="button button1"><h3>{{ m.nombre }}</h3></button></a>
 	{% endfor %}
 
 	<hr>
     <h2>Operativos</h2>
 	{% for o in Operativos %}
-	    <a href="{% url 'index' %}"><button class="button button1"><h3>{{ o.nombre }}</h3></button></a>
+	    <a href="{% url 'proceso' pk=o.pk %}"><button class="button button1"><h3>{{ o.nombre }}</h3></button></a>
 	{% endfor %}
 	
 	<hr>
     <h2>Apoyo</h2>
 	{% for a in Apoyo %}
-	    <a href="{% url 'index' %}"><button class="button button1"><h3>{{ a.nombre }}</h3></button></a>
+	    <a href="{% url 'proceso' pk=a.pk %}"><button class="button button1"><h3>{{ a.nombre }}</h3></button></a>
 	{% endfor %}
+	<hr>
+	<hr>
+	<hr>
+	<hr>
 
 {% endblock %}
