@@ -8,13 +8,13 @@
 			<th>Actual</th>
 			<th>Esperado</th>
 		</tr>
-	{% for i in indicadores %}
+		{% for i in indicadores %}
 		<tr>
 			<td>{{i.nombre}}</td>
 			<td>{{i.actual}}</td>
 			<td>{{i.esperado}}</td>
-		</tr>	
-	{% endfor %}
+		</tr>
+		{% endfor %}
 	</table>
 	<hr>
 {% endblock %}

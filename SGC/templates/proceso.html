@@ -11,7 +11,7 @@
 		<hr>
 		<b>Procedimientos:</b>
 		{% for p in procedimientos %}
-		{{p.nombre}}
+			<a href="{% url 'procedimiento' pk=p.pk %}">{{ p.nombre }}</a>
 		{%endfor%}
 	<hr>
 

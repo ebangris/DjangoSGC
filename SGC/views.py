@@ -23,6 +23,10 @@ def proceso(request, pk):
 	procedimientos = Procedimiento.objects.filter(proceso=proceso)
 	return render(request, 'proceso.html', {'proceso':proceso, 'procedimientos':procedimientos})
 
+def procedimiento(request, pk):
+	procedimiento = get_object_or_404(Procedimiento, pk=pk)
+	return render(request, 'procedimiento.html', {'procedimiento':procedimiento})
+
 def index(request):
 	# si tiene una sesion iniciada
 	#if request.user.is_authenticated:
