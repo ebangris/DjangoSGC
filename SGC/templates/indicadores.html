@@ -7,12 +7,15 @@
 			<th>Indicador</th>
 			<th>Actual</th>
 			<th>Esperado</th>
+			<th>Cumplido</th>
 		</tr>
 		{% for i in indicadores %}
 		<tr>
 			<td>{{i.nombre}}</td>
 			<td>{{i.actual}}</td>
 			<td>{{i.esperado}}</td>
+			<td>{{i.calc}} %</td>
+
 		</tr>
 		{% endfor %}
 	</table>
