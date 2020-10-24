@@ -2,13 +2,17 @@
 
 {% block content %}
 	<p align=center>
-	<hr>
-	{{procedimiento.proceso}}
+	<br>
 	<h1>{{procedimiento.nombre}}</h1>
-	<hr>	
-	<h3> {{procedimiento.detalles}} </h3>
+	
+	{{procedimiento.detalles}}
+	<br><br>
+	<b>Tareas:</b><br>
+	{% for t in tareas %}
+		<a href="{% url 'tarea' pk=t.pk %}">{{ t.nombre }}</a><br>
+	{%endfor%}
 	</p>
-	<hr>
-	<hr>	
+	<br>
+	<br>	
 
 {% endblock %}

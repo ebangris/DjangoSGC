@@ -1,18 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+	<br>
 	<h1>{{proceso.nombre}}</h1>
 	<p align=center>
-		<hr>
-		<b>Codigo:</b>{{proceso.codigo}}
-		<hr>	
-
-		<b>Fecha de creacion:</b>{{proceso.creacion}}
-		<hr>
-		<b>Procedimientos:</b>
+		<b>{{proceso.codigo}}</b><br>
+		<br>
+		<b>Fecha de creacion:</b> {{proceso.creacion}}<br><br>
+		<b>Procedimientos:</b><br>
 		{% for p in procedimientos %}
-			<a href="{% url 'procedimiento' pk=p.pk %}">{{ p.nombre }}</a>
+			<a href="{% url 'procedimiento' pk=p.pk %}">{{ p.nombre }}</a><br>
 		{%endfor%}
-	<hr>
+	<br>
 
 {% endblock %}

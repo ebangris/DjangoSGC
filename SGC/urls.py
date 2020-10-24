@@ -6,6 +6,7 @@ urlpatterns = [
     path('indicadores', views.indicadores, name='indicadores'),
     path('proceso/<int:pk>/', views.proceso, name='proceso'),
     path('procedimiento/<int:pk>/', views.procedimiento, name='procedimiento'),
+    path('tarea/<int:pk>/', views.tarea, name='tarea'),
 
     #path('post/<int:pk>/', views.post_detail, nombre='post_detail'), # url para los detalles
 ]

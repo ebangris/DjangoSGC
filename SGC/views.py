@@ -25,7 +25,12 @@ def proceso(request, pk):
 
 def procedimiento(request, pk):
 	procedimiento = get_object_or_404(Procedimiento, pk=pk)
-	return render(request, 'procedimiento.html', {'procedimiento':procedimiento})
+	tareas = Tarea.objects.filter(procedimiento=procedimiento)
+	return render(request, 'procedimiento.html', {'procedimiento':procedimiento, 'tareas':tareas})
+
+def tarea(request, pk):
+	tarea = get_object_or_404(Tarea, pk=pk)
+	return render(request, 'tarea.html', {'tarea':tarea})
 
 def index(request):
 	# si tiene una sesion iniciada

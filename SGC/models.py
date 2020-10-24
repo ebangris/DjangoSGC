@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from datetime import date
 
 class Proceso(models.Model):
 	#Tipos = models.TextChoices('Tipos', 'Misionales Operativos Apoyo')
@@ -7,8 +8,8 @@ class Proceso(models.Model):
 	nombre = models.CharField(max_length=80)
 	codigo = models.CharField(max_length=15)
 	
-	creacion = models.DateField()
-	edicion = models.DateField()
+	creacion = models.DateField(auto_now_add=True)
+	edicion = models.DateField(auto_now=True)
 	
 	# Un proceso pertenece a un tipo de procesos
 	tipo = models.CharField(choices=Tipos, max_length=10)
@@ -20,6 +21,9 @@ class Procedimiento(models.Model):
 	nombre = models.CharField(max_length=80)
 	detalles = models.TextField()
 
+	creacion = models.DateField(auto_now_add=True)
+	edicion = models.DateField(auto_now=True)
+	
 	#Un procedimiento pertenece a un proceso
 	proceso = models.ForeignKey(Proceso, on_delete=models.CASCADE)
 
@@ -30,6 +34,9 @@ class Tarea(models.Model):
 	nombre = models.CharField(max_length=80)
 	detalles = models.TextField()
 
+	creacion = models.DateField(auto_now_add=True)
+	edicion = models.DateField(auto_now=True)
+	
 	#Una tarea pertenece a un procedimiento
 	procedimiento = models.ForeignKey(Procedimiento, on_delete=models.CASCADE)
 
@@ -38,6 +45,10 @@ class Tarea(models.Model):
 
 class Indicador(models.Model):
 	nombre = models.CharField(max_length=80)
+	
+	creacion = models.DateField(auto_now_add=True)
+	edicion = models.DateField(auto_now=True)
+	
 	actual = models.IntegerField()
 	esperado = models.IntegerField()
 	
