@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
-
 {% block content %}
+	<br>
+	<br>
+	<p align="center">
+		<h2>{{indicador.nombre}}</h2>
+		<br>
+		<b>Encargado/s:</b> 
+		{% for e in indicador.encargados %}
+			<h6>{{e}}</h6>
+		{% endfor %}
+		<br>
+		<b>Detalles:</b> 
+		{{indicador.detalles}}
+	</p>
 	<br>
 	<table class='ind' align=center>
 		<tr>
@@ -16,7 +28,7 @@
 			<td>{{i.esperado}}</td>
 			<td>{{i.calc}}  %</td>
 		</tr>
-		{%endfor%}
+		{% endfor %}
 		<tfoot>
 			Presione sobre un indicador para ver mas detalles
 		</tfoot>

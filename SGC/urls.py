@@ -4,7 +4,8 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'), # todo el que llegue al blog entrara a esta vista
     path('indicadores', views.indicadores, name='indicadores'),
-    path('proceso/<int:pk>/', views.proceso, name='proceso'),
+    path('indicadores/<int:pk>/', views.indicador, name='indicador'),
+	path('proceso/<int:pk>/', views.proceso, name='proceso'),
     path('procedimiento/<int:pk>/', views.procedimiento, name='procedimiento'),
     path('tarea/<int:pk>/', views.tarea, name='tarea'),
 

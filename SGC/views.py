@@ -18,6 +18,11 @@ def indicadores(request):
 	indicadores = Indicador.objects.all()
 	return render(request, "indicadores.html", {'indicadores':indicadores})
 
+def indicador(request, pk):
+	indicador = get_object_or_404(Indicador, pk=pk)
+	indicadores = Indicador.objects.all()
+	return render(request, "indicador.html", {'indicador':indicador, 'indicadores':indicadores})
+
 def proceso(request, pk):
 	proceso = get_object_or_404(Proceso, pk=pk)
 	procedimientos = Procedimiento.objects.filter(proceso=proceso)

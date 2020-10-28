@@ -18,7 +18,7 @@
         <span class='menu' >
             <a href="{% url 'index' %}"><button class="button button2">Mapa de procesos</button></a>
             <a href="{% url 'indicadores' %}"><button class="button button2">Indicadores</button></a>
-            <a href="{% url 'index' %}"><button class="button button2">Salir</button></a>
+            <a href="javascript:history.back()"><button class="button button2">Atras</button></a>
         </span>
     </header>
     {% block content %}

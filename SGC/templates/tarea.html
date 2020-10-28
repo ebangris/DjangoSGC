@@ -5,7 +5,10 @@
 	<p align=center>
 		<b>Fecha de creacion:</b> {{tarea.creacion}}
 		<br>
-		<b>Encargado/s:</b> {{tarea.encargados}}
+		<b>Encargado/s:</b> 
+		{% for e in tarea.encargados %}
+			<h6>{{e}}</h6>
+		{% endfor %}
 		<br>
 		<br>
 		{{tarea.detalles }}

@@ -54,12 +54,22 @@ class Indicador(models.Model):
 	creacion = models.DateField(auto_now_add=True)
 	edicion = models.DateField(auto_now=True)
 	
+	detalles = models.TextField(blank=True)
+	encargado = models.ManyToManyField(User) 
+
 	actual = models.IntegerField()
 	esperado = models.IntegerField()
 
 	def calc(self):
-		cumplido = (self.actual / self.esperado)*100
-		return int(cumplido)
+		if(self.esperado > 0 ):
+			cumplido = (self.actual / self.esperado)*100
+		else:
+			cumplido = '--'
+		return cumplido
+
+	def encargados(self):
+		encargados = self.encargado.all()
+		return encargados
 
 	def __str__(self):
 		return self.nombre
