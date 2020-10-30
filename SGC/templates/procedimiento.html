@@ -4,12 +4,33 @@
 	<p align=center>
 	<br>
 	<h1>{{procedimiento.nombre}}</h1>
+	{{procedimiento.codigo}}
+	<br>
+	<br>
+	<b>Objetivo:</b>
+	{{procedimiento.objetivo}}
+	<br>
+	<br>
+	<b>Alcance:</b>
+	{{procedimiento.alcance}}
+	<br>
+	<br>
+	<b>Responsable/s:</b>
+	{% for e in tarea.encargados %}
+		<h6>{{e}}</h6>
+	{% endfor %}
+	<br>
+	<b>Infograma:</b>
+	{{procedimiento.infograma}}
+	<br>
+	<b>Formatos:</b>
+	{{procedimiento.formatos}}
+	<br>
+	<br>
 	
-	{{procedimiento.detalles}}
-	<br><br>
-	<b>Tareas:</b><br>
-	{% for t in tareas %}
-		<a href="{% url 'tarea' pk=t.pk %}">{{ t.nombre }}</a><br>
+	<b>Indicadores:</b>
+	{% for i in indicadores %}
+		<a href="{% url 'indicador' pk=i.pk %}">{{ i.nombre }}</a><br>
 	{%endfor%}
 	</p>
 	<br>

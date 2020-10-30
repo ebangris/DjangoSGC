@@ -14,15 +14,6 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 '''
 
-def indicadores(request):
-	indicadores = Indicador.objects.all()
-	return render(request, "indicadores.html", {'indicadores':indicadores})
-
-def indicador(request, pk):
-	indicador = get_object_or_404(Indicador, pk=pk)
-	indicadores = Indicador.objects.all()
-	return render(request, "indicador.html", {'indicador':indicador, 'indicadores':indicadores})
-
 def proceso(request, pk):
 	proceso = get_object_or_404(Proceso, pk=pk)
 	procedimientos = Procedimiento.objects.filter(proceso=proceso)
@@ -30,20 +21,24 @@ def proceso(request, pk):
 
 def procedimiento(request, pk):
 	procedimiento = get_object_or_404(Procedimiento, pk=pk)
-	tareas = Tarea.objects.filter(procedimiento=procedimiento)
-	return render(request, 'procedimiento.html', {'procedimiento':procedimiento, 'tareas':tareas})
+	indicadores = Indicador.objects.filter(procedimiento=procedimiento)
+	return render(request, 'procedimiento.html', {'procedimiento':procedimiento, 'indicadores':indicadores})
 
-def tarea(request, pk):
-	tarea = get_object_or_404(Tarea, pk=pk)
-	return render(request, 'tarea.html', {'tarea':tarea})
+def indicadores(request):
+	indicadores = Indicador.objects.all()
+	return render(request, "indicadores.html", {'indicadores':indicadores})
+
+def indicador(request, pk):
+	indicador = get_object_or_404(Indicador, pk=pk)
+	return render(request, "indicador.html", {'indicador':indicador})
 
 def index(request):
 	# si tiene una sesion iniciada
 	#if request.user.is_authenticated:
 		M = Proceso.objects.filter(tipo='misionales')
-		O = Proceso.objects.filter(tipo='operativos')
+		E = Proceso.objects.filter(tipo='estrategicos')
 		A = Proceso.objects.filter(tipo='apoyo')
-		return render(request, "index.html", {'Misionales':M, 'Operativos':O, 'Apoyo':A} )
+		return render(request, "index.html", {'Misionales':M, 'Estrategicos':E, 'Apoyo':A} )
 	
 	# si no ha iniciado sesion
 	#return render(request, "Error404")

@@ -7,9 +7,9 @@
 	{% endfor %}
 
 	<hr>
-    <h2>Operativos</h2>
-	{% for o in Operativos %}
-	    <a href="{% url 'proceso' pk=o.pk %}"><button class="button button1"><h3>{{ o.nombre }}</h3></button></a>
+    <h2>Estrategicos</h2>
+	{% for e in Estrategicos %}
+	    <a href="{% url 'proceso' pk=e.pk %}"><button class="button button1"><h3>{{ e.nombre }}</h3></button></a>
 	{% endfor %}
 	
 	<hr>

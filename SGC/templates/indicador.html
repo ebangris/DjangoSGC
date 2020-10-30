@@ -5,34 +5,17 @@
 	<p align="center">
 		<h2>{{indicador.nombre}}</h2>
 		<br>
-		<b>Encargado/s:</b> 
-		{% for e in indicador.encargados %}
-			<h6>{{e}}</h6>
-		{% endfor %}
+		<b>Proposito:</b> 
+		{{indicador.proposito}}
 		<br>
-		<b>Detalles:</b> 
-		{{indicador.detalles}}
+		<b>Detalle de la informacion:</b> 
+		{{indicador.detalle}}
+		<br>
+		<b>Interpretación</b> 
+		{{indicador.interpretacion}}
+		<br>
+		<b>Fecha Objetivo</b> 
+		{{indicador.fecha_objetivo}}
 	</p>
-	<br>
-	<table class='ind' align=center>
-		<tr>
-			<th>Nombre</th>
-			<th>Valor Actual</th>
-			<th>Valor Esperado</th>
-			<th>Indicador</th>
-		</tr>
-		{% for i in indicadores %}
-		<tr>
-			<td><a href="{% url 'indicador' pk=i.pk %}">{{ i.nombre }}</a></td>
-			<td>{{i.actual}}</td>
-			<td>{{i.esperado}}</td>
-			<td>{{i.calc}}  %</td>
-		</tr>
-		{% endfor %}
-		<tfoot>
-			Presione sobre un indicador para ver mas detalles
-		</tfoot>
-	</table>
-	-- % este indicador se utiliza como referencia para conocer el estado actual de la empresa
 	<br>
 {% endblock %}
