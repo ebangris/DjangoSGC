@@ -5,14 +5,21 @@
 	<p align="center">
 		<h2>{{indicador.nombre}}</h2>
 		<br>
+		<b>Procedimiento:</b>
+		<a href="{% url 'procedimiento' pk=indicador.procedimiento.pk %}">{{indicador.procedimiento}}</a>
+		<br>
+		<br>
 		<b>Proposito:</b> 
 		{{indicador.proposito}}
+		<br>
 		<br>
 		<b>Detalle de la informacion:</b> 
 		{{indicador.detalle}}
 		<br>
+		<br>
 		<b>Interpretación</b> 
 		{{indicador.interpretacion}}
+		<br>
 		<br>
 		<b>Fecha Objetivo</b> 
 		{{indicador.fecha_objetivo}}

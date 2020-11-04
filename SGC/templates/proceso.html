@@ -9,7 +9,7 @@
 		<b>Fecha de creacion:</b> {{proceso.creacion}}<br><br>
 		<b>Procedimientos:</b><br>
 		{% for p in procedimientos %}
-			<a href="{% url 'procedimiento' pk=p.pk %}">{{ p.nombre }}</a><br>
+			<a href="{% url 'procedimiento' pk=p.pk %}"><button class="button button1">{{ p.nombre }}</button></a><br>
 		{%endfor%}
 	<br>
 
