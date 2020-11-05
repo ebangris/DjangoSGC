@@ -1,25 +1,32 @@
 {% load static %}
-<html lang=>
+<!doctype html>
+<html lang="es">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="icon" type="image/x-icon" href="https://static-cdn.multiscreensite.com/runtime/favicon_d1_res.ico"/>
-        <title>SGC ColchonesSuper</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/sgc.css' %}">
+        <title>SGC ColchonesSuper</title>
     </head>
-    <body >
+    <body>
     <header>
-        <span class='appnombre'>
-            <img src="{% static 'Logo-super.jpg' %}" > 
+    <div class="container-fluid">
+    <span class='appnombre row'>
+        <div class="col-2">
+            <img src="{% static 'Logo-super.jpg' %}" class=" rounded"> 
+        </div>
+        <div class="col-10">
             Sistema de Gestión de Calidad
-        </span>
-        <br>
-        <span class='menu' >
-            <a href="{% url 'index' %}"><button class="button button2">Mapa de procesos</button></a>
-            <a href="{% url 'indicadores' %}"><button class="button button2">Indicadores</button></a>
-            <a href="javascript:history.back()"><button class="button button2">Atras</button></a>
-        </span>
+            <br>
+            <div class="btn-group float-right">
+                <a href="{% url 'index' %}" class="button2 btn btn-outline-primary" role="button">Mapa de procesos</a>
+                <a href="{% url 'indicadores' %}" class="button2 btn btn-outline-primary" role="button">Indicadores</a>
+                <a href="javascript:history.back()" class="button2 btn btn-outline-primary" role="button">Atras</a>
+            </div>  
+        </div>
+    </span>
     </header>
-    <br>
     {% block content %}
     {% endblock %}
     <!-- <a href="/logout">Cerrar sesión</a> -->

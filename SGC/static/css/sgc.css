@@ -1,44 +1,31 @@
 header {
 	background :#1F85DE;
-	-moz-box-shadow   :4px 4px 4px black;
-	-webkit-box-shadow:4px 4px 4px black;
-	box-shadow        :4px 4px 4px black;
-	margin-right      :15px;
-	margin-left 	  :15px;
-	margin-top 	  	  :5px;
-}
-.menu {
-	font-size  :20pt;
-	text-align : right;
+	-moz-box-shadow   :15px 15px 50px black;
+	-webkit-box-shadow:15px 15px 50px black;
+	box-shadow        :15px 15px 50px black;
+ 	margin : 5px 5px 25px 5px;
+ 	padding: 10px;
 }
 
 .appnombre {
 	font-family:'Lobster';
-    width: 900px;
-    height:250px;
-	text-align :center;
 	background :#1F85DE;
 	color      :black;
-	font-size  :40pt;
+	font-size  :5vw;
 }
 
 header img {
-	padding    		  :20px;
-	border            :4px #1F85DE;
+	-moz-box-shadow   :0px 0px 20px white;
+	-webkit-box-shadow:0px 0px 20px white;
+	box-shadow        :0px 0px 20px white;
+	height: auto;
+	width: 150%;
 }
 
 body{
-	padding: 5px;
 	text-align :center;
-	padding-left: 20px;
 }
 
-h2 {
-	font-family:'Lobster';
-	font-weight: bold;
-	color: #1F85DE;
-	
-}
 .button {
 	font-family:'Lobster';
 	font-weight: bold;
@@ -52,7 +39,9 @@ h2 {
 	color: #1F85DE;
 	background-color: white; 
 	border: 2px solid #1F85DE;
-	padding: 10px;
+	margin:auto;
+	padding: 1vw;
+	font-size  :3vw;
 }
 
 .button1:hover {
@@ -62,37 +51,15 @@ h2 {
 }
 
 .button2 {
-  	background-color: #1F85DE;
   	color: white;
-  	padding: 10px;
+  	background-color: #1F85DE;
+	border: 1px solid white;
+	font-weight: bold;
+	font-size  :2vw;
+	margin-top: 30px;
 }
 
 .button2:hover {
 	background-color: white; 
 	color: #1F85DE;
 }
-
-.ind {
-  	border-collapse: collapse;
-  	text-align: center;
-  	width: 80%;
-}
-
-.ind tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.ind td{
-  	text-align: center;
-	font-size  :20pt;
-  	padding: 10px;
-}
-.ind th {
-  	background-color: #1F85DE;
-  	color: white;
-  	text-align: center;
-	font-size  :35pt;
-  	padding: 5px;
-
-}
-

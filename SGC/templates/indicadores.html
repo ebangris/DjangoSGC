@@ -2,7 +2,7 @@
 
 {% block content %}
 	<br>
-	<table class='ind' align=center>
+	<table class="table table-dark table-hover" align=center>
 		<tr>
 			<th>Nombre</th>
 			<th>Valor Actual</th>
@@ -14,7 +14,12 @@
 			<td><a href="{% url 'indicador' pk=i.pk %}">{{ i.nombre }}</a></td>
 			<td>{{i.actual}}</td>
 			<td>{{i.esperado}}</td>
-			<td>{{i.calc}}  %</td>
+			<td>
+			<div class="progress">
+			<div class="progress-bar" style="width:{{i.calc}}%"></div>
+			{{i.calc}}  %
+			</div>
+			</td>
 		</tr>
 		{%endfor%}
 		<tfoot>
