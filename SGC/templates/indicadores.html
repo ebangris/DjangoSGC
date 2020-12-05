@@ -15,10 +15,9 @@
 			<td>{{i.actual}}</td>
 			<td>{{i.esperado}}</td>
 			<td>
+			{{i.calc}} %
 			<div class="progress">
-			<div class="progress-bar" style="width:{{i.calc}}%"></div>
-			{{i.calc}}  %
-			</div>
+			<div class="progress-bar" style="width:{{i.calc}}%"></div></div>
 			</td>
 		</tr>
 		{%endfor%}

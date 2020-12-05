@@ -16,7 +16,7 @@
 	<br>
 	<br>
 	<b>Responsable/s:</b>
-	{% for e in tarea.encargados %}
+	{% for e in procedimiento.encargados %}
 		<h6>{{e}}</h6>
 	{% endfor %}
 	<br>
@@ -24,11 +24,9 @@
 	{{procedimiento.infograma}}
 	<br>
 	<b>Formatos:</b>
-	<a href="/{{procedimiento.formatos}}" target="_blank">{{procedimiento.formatos}}</a><br>
-
+	<a href="file:{{procedimiento.formatos.path}}" target="_top">{{procedimiento.formatos}}</a>
 	<br>
-	<br>
-	
+	<br>	
 	<b>Indicadores:</b>
 	{% for i in indicadores %}
 		<a href="{% url 'indicador' pk=i.pk %}">{{ i.nombre }}</a><br>

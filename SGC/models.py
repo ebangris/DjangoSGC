@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from datetime import date
+from django.conf import settings
 
 class Proceso(models.Model):
 	#Tipos = models.TextChoices('Tipos', 'Misionales Operativos Apoyo')
@@ -30,10 +31,10 @@ class Procedimiento(models.Model):
 	infograma = models.ImageField(blank=True, upload_to='infogramas/')
 
 	def foldername(self, filename):
-		return 'formatos/{0}'.format(filename)
+		return '/formatos/{0}'.format(filename)
 	
 	# el formato sera un archivo de word o pdf
-	formatos = models.FileField(blank=True, upload_to= foldername)
+	formatos = models.FileField(blank=True, upload_to='formatos/')
 
 	creacion = models.DateField(auto_now_add=True)
 	edicion = models.DateField(auto_now=True)
@@ -54,8 +55,8 @@ class Indicador(models.Model):
 	creacion = models.DateField(auto_now_add=True)
 	edicion = models.DateField(auto_now=True)
 	
-	proposito = models.TextField()
-	detalle = models.TextField()
+	proposito = models.TextField() 
+	detalle = models.TextField() # que variables componen el indicador
 	interpretacion = models.TextField()
 
 	actual = models.IntegerField()
@@ -71,11 +72,7 @@ class Indicador(models.Model):
 			cumplido = (self.actual / self.esperado)*100
 		else:
 			cumplido = '--'
-		return cumplido
-
-	def encargados(self):
-		encargados = self.encargado.all()
-		return encargados
+		return int(cumplido)
 
 	def __str__(self):
 		return self.nombre
