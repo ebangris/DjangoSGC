@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
 	<p align=center>
 	<br>
@@ -7,24 +6,30 @@
 	{{procedimiento.codigo}}
 	<br>
 	<br>
-	<b>Objetivo:</b>
+	<b>Objetivo</b>
+	<br>
 	{{procedimiento.objetivo}}
 	<br>
 	<br>
-	<b>Alcance:</b>
+	<b>Alcance</b>
+	<br>
 	{{procedimiento.alcance}}
 	<br>
 	<br>
 	<b>Responsable/s:</b>
+	<br>
 	{% for e in procedimiento.encargados %}
 		<h6>{{e}}</h6>
 	{% endfor %}
 	<br>
-	<b>Infograma:</b>
-	{{procedimiento.infograma}}
+	<button href="{{ procedimiento.infograma }}" >
+	<b>Infograma</b>
+	</button>
 	<br>
-	<b>Formatos:</b>
-	<a href="file:{{procedimiento.formatos.path}}" target="_top">{{procedimiento.formatos}}</a>
+	<br>
+	<button href="{{ procedimiento.formatos }}">
+	<b>Formato</b>
+	</button>
 	<br>
 	<br>	
 	<b>Indicadores:</b>

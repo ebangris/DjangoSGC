@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from datetime import date
 from django.conf import settings
+import os
 
 class Proceso(models.Model):
 	#Tipos = models.TextChoices('Tipos', 'Misionales Operativos Apoyo')
@@ -28,13 +29,13 @@ class Procedimiento(models.Model):
 	encargado = models.ManyToManyField(User) 
 	
 	# el infograma debe ser una imagen, la base de datos almacena el nombre del archivo
-	infograma = models.ImageField(blank=True, upload_to='infogramas/')
+	infograma = models.URLField(blank=True)
 
 	def foldername(self, filename):
 		return '/formatos/{0}'.format(filename)
 	
 	# el formato sera un archivo de word o pdf
-	formatos = models.FileField(blank=True, upload_to='formatos/')
+	formatos = models.URLField(blank=True)
 
 	creacion = models.DateField(auto_now_add=True)
 	edicion = models.DateField(auto_now=True)
@@ -45,6 +46,12 @@ class Procedimiento(models.Model):
 	def encargados(self):
 		encargados = self.encargado.all()
 		return encargados
+
+	def open(self, click):
+		if click:
+			cmd = 'explorer.exe {0}'.format(self.formatos.path)
+			os.system(cmd)
+		return 
 
 	def __str__(self):
 		return self.nombre

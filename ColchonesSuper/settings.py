@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nx!2ml69+-j+8m^ctw-^7!r@qcdr2)z6fv3*oy4%7+eph*@qou'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'SGC.apps.SgcConfig'
+    'SGC.apps.SgcConfig'    
 ]
 
 MIDDLEWARE = [
@@ -113,10 +113,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-MEDIA_URL = 'http://ebang.pythonanywhere.com/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
